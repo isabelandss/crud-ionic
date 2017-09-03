@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Animais</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding-right>
+  <ion-list>
+    <ion-item *ngFor="let animal of lista | async" (click)="editar(animal.$key)">
+      <ion-avatar item-start>
+        <img src="https://randomuser.me/api/portraits/thumb/lego/1.jpg">
+      </ion-avatar>
+      <h2>{{animal.nome}}</h2>
+      <p>{{animal.especie}}</p>
+      <p>{{animal.dataNascimento}}</p>
+      <p>{{animal.sexo}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab (click)="navegarCriarAnimal()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

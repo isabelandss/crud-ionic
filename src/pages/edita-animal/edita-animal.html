@@ -1,0 +1,60 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Editar dados do animal</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-list>
+          <ion-item>
+            <ion-label>Nome</ion-label>
+            <ion-input type="text" [(ngModel)]="animal.nome"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Data de nascimento</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="animal.dataNascimento"></ion-datetime>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Espécie</ion-label>
+            <ion-select [(ngModel)]="animal.especie">
+              <ion-option value="Gato">Gato</ion-option>
+              <ion-option value="Cachorro">Cachorro</ion-option>
+              <ion-option value="Peixe">Peixe</ion-option>
+              <ion-option value="Hamster">Hamster</ion-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Sexo</ion-label>
+            <ion-select [(ngModel)]="animal.sexo">
+              <ion-option value="Feminino">Feminino</ion-option>
+              <ion-option value="Masculino">Masculino</ion-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Tipo sanguíneo</ion-label>
+            <ion-select [(ngModel)]="animal.tipo">
+              <ion-option value="A+">A+</ion-option>
+              <ion-option value="A-">A-</ion-option>
+              <ion-option value="B+">B+</ion-option>
+              <ion-option value="B-">B-</ion-option>
+              <ion-option value="O+">O+</ion-option>
+              <ion-option value="O-">O-</ion-option>
+              <ion-option value="AB+">AB+</ion-option>
+              <ion-option value="AB-">AB-</ion-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <button ion-button center (click)="salvar()">Salvar</button>
+            <button ion-button center (click)="excluir()">Excluir</button>
+          </ion-item>
+      </ion-list>
+      
+  </ion-content>
+  
